@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Lab</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background-image: url("Lab.png");
+      background-size: cover;
+    }
+
+    #lajici {
+      margin-top: 110px;
+      margin-left: 1080px;
+      margin-bottom: 0px;
+    }
+
+
+
+    #vezna {
+      margin-top: -190px;
+    }
+
+    #pipeti {
+      margin-top: 110px;
+      margin-left: 480px;
+      position: absolute;
+    }
+
+    #drag2 {
+      position: absolute;
+      margin-top: -250px;
+      margin-left: 1100px;
+      cursor: pointer;
+    }
+
+    #drag3 {
+      position: absolute;
+      margin-top: -545px;
+      margin-left: 780px;
+      cursor: pointer;
+    }
+
+    #drag4 {
+      position: absolute;
+      margin-top: -545px;
+      margin-left: 880px;
+      cursor: pointer;
+    }
+
+    #drag5 {
+      position: absolute;
+      margin-top: -530px;
+      margin-left: 980px;
+      cursor: pointer;
+    }
+
+    #drag6 {
+      position: absolute;
+      margin-top: -280px;
+      margin-left: 610px;
+      cursor: pointer;
+    }
+
+    #div1 {
+      position: absolute;
+      width: 100px;
+      height: 60px;
+      margin-top: -330px;
+      margin-left: 132px;
+      cursor: pointer;
+    }
+
+    #div6 {
+      position: absolute;
+      width: 100px;
+      height: 60px;
+      margin-top: -270px;
+      margin-left: 132px;
+      cursor: pointer;
+
+    }
+
+    #div2 {
+      position: absolute;
+      cursor: pointer;
+
+      width: 100px;
+      height: 200px;
+      margin-top: -250px;
+      margin-left: 300px;
+    }
+
+    #div3 {
+      position: absolute;
+      cursor: pointer;
+
+      width: 100px;
+      height: 200px;
+      margin-top: -250px;
+      margin-left: 400px;
+    }
+
+    #div4 {
+      position: absolute;
+      cursor: pointer;
+
+      width: 100px;
+      height: 200px;
+      margin-top: -250px;
+      margin-left: 500px;
+    }
+
+    #drag1 {
+      cursor: pointer;
+      margin-left: 1085px;
+      margin-top: -470px;
+      position: absolute;
+      cursor: pointer;
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <img src="lajici.png" id="lajici">
+  <img src="vezna.png" id="vezna">
+  <img src="pipeti.png" id="pipeti">
+  <img src="postavka.png" id="postavka">
+
+  <div id="drag1" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <img src="lajica.png" draggable="true" ondragstart="drag(event)" id="lajica">
+  </div>
+  <div id="drag2" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <img src="pipeta.png" draggable="true" ondragstart="drag(event)" id="pipeta">
+  </div>
+  <div id="drag3" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <img src="Bottle1.png" draggable="true" ondragstart="drag(event)" id="bottle1">
+  </div>
+  <div id="drag4" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <img src="Bottle2.png" draggable="true" ondragstart="drag(event)" id="bottle2">
+  </div>
+  <div id="drag5" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <img src="Bottle3.png" draggable="true" ondragstart="drag(event)" id="bottle3">
+  </div>
+  <div id="drag6" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <img src="epruvetka2.png" draggable="true" ondragstart="drag(event)" id=id="epruvetka2">
+  </div>
+  <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)"></div>
+  <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)"></div>
+  <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)"></div>
+  <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)"></div>
+  <div id="div6" ondrop="drop(event)" ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)"></div>
+  <script>
+    function allowDrop(ev) {
+      ev.preventDefault();
+    }
+
+    function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+    }
+  </script>
+
+</body>
+
+</html>
